@@ -205,11 +205,11 @@ void Server::process_command(const std::string& cmd, int client_fd,
         return;
     }
 
-    std::string unknow = "unknow command";
+    std::string unknown = "unknown command";
     if(client_fd != -1){
-            send(client_fd, unknow.c_str(), unknow.size(), 0);
+            send(client_fd, unknown.c_str(), unknown.size(), 0);
         } else if (udp_addr) {
-            sendto(udp_socket, unknow.c_str(), unknow.size(), 0, 
+            sendto(udp_socket, unknown.c_str(), unknown.size(), 0, 
                    reinterpret_cast<const sockaddr*>(udp_addr), udp_addr_len);
         }     
                             
